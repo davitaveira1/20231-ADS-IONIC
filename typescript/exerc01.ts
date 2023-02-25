@@ -12,7 +12,8 @@ class pessoa{
     private nome : string;
 
     getNome(){
-        console.log("O nome é: "+this.nome);
+        //console.log("O nome do prof: "+this.nome);
+        return "O nome do prof é: "+this.nome;
     }    
     setNome(nome : string){
         this.nome = nome;
@@ -23,4 +24,5 @@ class pessoa{
 let p = new pessoa();
 
 p.setNome("Ricardo");
-p.getNome();
+console.log(p.getNome());
+

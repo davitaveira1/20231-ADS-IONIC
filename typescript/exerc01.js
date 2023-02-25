@@ -8,7 +8,8 @@ var pessoa = /** @class */ (function () {
     function pessoa() {
     }
     pessoa.prototype.getNome = function () {
-        console.log("O nome é: " + this.nome);
+        //console.log("O nome do prof: "+this.nome);
+        return "O nome do prof é: " + this.nome;
     };
     pessoa.prototype.setNome = function (nome) {
         this.nome = nome;
@@ -17,4 +18,4 @@ var pessoa = /** @class */ (function () {
 }());
 var p = new pessoa();
 p.setNome("Ricardo");
-p.getNome();
+console.log(p.getNome());
