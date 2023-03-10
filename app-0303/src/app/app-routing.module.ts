@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'principal',
     loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule)
   },
+  {
+    path: 'principal-ex02-prop1',
+    loadChildren: () => import('./principal-ex02-prop1/principal-ex02-prop1.module').then( m => m.PrincipalEx02Prop1PageModule)
+  },
 ];
 
 @NgModule({
