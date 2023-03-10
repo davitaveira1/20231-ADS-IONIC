@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalEx02Prop1Page implements OnInit {
 
-  n1 : number = 2;
-  n2 : number = 4;
+  n1 : number;
+  n2 : number;
+  soma : number;
 
   constructor() { }
 
@@ -17,6 +18,7 @@ export class PrincipalEx02Prop1Page implements OnInit {
 
   somar(){
     console.log(this.n1+this.n2);
+    this.soma = this.n1 + this.n2;
   }
 
 }
