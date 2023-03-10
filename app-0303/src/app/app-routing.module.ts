@@ -13,15 +13,19 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./ex01/inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./pagprincipal/ex01/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
     path: 'pag1',
-    loadChildren: () => import('./ex01/pag1/pag1.module').then( m => m.Pag1PageModule)
+    loadChildren: () => import('./pagprincipal/ex01/pag1/pag1.module').then( m => m.Pag1PageModule)
   },
   {
     path: 'pag2',
-    loadChildren: () => import('./ex01/pag2/pag2.module').then( m => m.Pag2PageModule)
+    loadChildren: () => import('./pagprincipal/ex01/pag2/pag2.module').then( m => m.Pag2PageModule)
+  },
+  {
+    path: 'principal',
+    loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule)
   },
 ];
 
