@@ -1,0 +1,12 @@
+.padding-start{
+    --padding-start: 0px;
+}
+
+.padding{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.mg-top-20{
+    margin-top: 20px;
+}
