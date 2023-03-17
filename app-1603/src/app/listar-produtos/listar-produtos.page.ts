@@ -1,3 +1,4 @@
+import { DadosService } from './../services/dados.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,9 +9,10 @@ import { Router } from '@angular/router';
 })
 export class ListarProdutosPage implements OnInit {
 
-  frutas = ['Uva','Banana','Melão'];
+  
 
-  constructor(public rota : Router) { }
+  constructor(public dados : DadosService,
+              public rota : Router) { }
 
   ngOnInit() {
   }

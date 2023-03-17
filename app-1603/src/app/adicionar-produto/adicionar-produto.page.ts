@@ -1,3 +1,4 @@
+import { DadosService } from './../services/dados.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
@@ -9,20 +10,30 @@ import { ToastController } from '@ionic/angular';
 })
 export class AdicionarProdutoPage implements OnInit {
 
-  nome : String = "";
+  nome : string = "";
 
-  constructor(public rota : Router,
-              public mensagem : ToastController) { }
+  constructor(public dados : DadosService,
+              public rota : Router,
+              public toast : ToastController) { }
 
   ngOnInit() {
     
   }
 
   cadastrar(){
-    //1º passo - inserir no vetor
+    this.dados.setFrutas(this.nome);
     this.rota.navigate(['listar-produtos']);
-    //enviar mensagem
+    this.mensagem('Produto '+this.nome+' adicionado com sucesso!',3000,'success');
     this.nome="";
+  }
+
+  async mensagem(msg : any,duration : any,color : any) {
+    const toast = await this.toast.create({
+      message: msg,
+      duration: duration,
+      color: color
+    });
+    toast.present();
   }
 
 }
