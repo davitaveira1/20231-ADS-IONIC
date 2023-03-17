@@ -1,0 +1,1 @@
+this.mensagem('Produto '+this.nome+' adicionado com sucesso!',3000,'success');

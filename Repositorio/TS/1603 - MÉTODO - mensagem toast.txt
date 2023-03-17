@@ -1,0 +1,8 @@
+  async mensagem(msg : any,duration : any,color : any) {
+    const toast = await this.toast.create({
+      message: msg,
+      duration: duration,
+      color: color
+    });
+    toast.present();
+  }

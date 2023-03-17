@@ -16,7 +16,7 @@ export class ListarProdutosPage implements OnInit {
   }
 
   adicionarProduto(){
-    this.rota.navigate([('adicionar-produto')])
+    this.rota.navigate(['adicionar-produto'])
   }
 
 }

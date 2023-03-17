@@ -1,4 +1,6 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-adicionar-produto',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdicionarProdutoPage implements OnInit {
 
-  constructor() { }
+  nome : String = "";
+
+  constructor(public rota : Router,
+              public mensagem : ToastController) { }
 
   ngOnInit() {
+    
+  }
+
+  cadastrar(){
+    //1º passo - inserir no vetor
+    this.rota.navigate(['listar-produtos']);
+    //enviar mensagem
+    this.nome="";
   }
 
 }
