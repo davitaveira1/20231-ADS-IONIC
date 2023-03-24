@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -16,10 +17,15 @@ export class DadosService {
     this.frutas.push(fruta);
   }
 
-  public removeFrutas(fruta:string){
+  public removeFruta(fruta:string){
     this.indice = this.frutas.indexOf(fruta);
     console.log(this.frutas.splice(this.indice,1));
   }
 
-  constructor() { }
+  public visualizarFruta(fruta:string){
+    this.indice = this.frutas.indexOf(fruta);
+    this.rota.navigate(['visualizar-produto/'+this.indice]);
+  }
+
+  constructor(public rota : Router) { }
 }
