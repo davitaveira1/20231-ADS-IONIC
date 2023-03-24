@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class DadosService {
 
   frutas = ['Uva','Banana','Melão'];
+  indice:number;
 
   public getFrutas(){
     return this.frutas;
@@ -13,6 +14,11 @@ export class DadosService {
 
   public setFrutas(fruta:string){
     this.frutas.push(fruta);
+  }
+
+  public removeFrutas(fruta:string){
+    this.indice = this.frutas.indexOf(fruta);
+    console.log(this.frutas.splice(this.indice,1));
   }
 
   constructor() { }
