@@ -27,5 +27,9 @@ export class DadosService {
     this.rota.navigate(['visualizar-produto/'+this.indice]);
   }
 
+  public editarFruta(){
+
+  }
+
   constructor(public rota : Router) { }
 }
