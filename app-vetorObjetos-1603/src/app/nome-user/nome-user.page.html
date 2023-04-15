@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>nome-user</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  
+  <!-- Teste: {{Objeto.getObjeto().getName()}}
+
+  <ion-list *ngFor="let user of Objeto.getVetorObjetos()">
+    
+    <ion-item>
+      <ion-label>{{user.getName()}}</ion-label>
+    </ion-item> 
+  </ion-list> -->
+
+  <ion-card *ngFor="let user of Objeto.getVetorObjetos()">
+    <ion-img src="/assets/imagens/{{user.getImagem()}}">
+    </ion-img>
+    <ion-card-header>
+      <ion-card-title>
+        User
+      </ion-card-title>
+      <ion-card-subtitle>
+        {{user.getName()}}
+      </ion-card-subtitle>
+
+    </ion-card-header>
+    <ion-card-content>
+      
+    </ion-card-content>    
+  </ion-card>  
+
+
+</ion-content>
