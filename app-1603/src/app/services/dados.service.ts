@@ -27,8 +27,17 @@ export class DadosService {
     this.rota.navigate(['visualizar-produto/'+this.indice]);
   }
 
-  public editarFruta(){
+  public nomeFruta(indice : number) : string {
+    return this.frutas[this.indice];
+  }
 
+  public encaminharEdicaoFruta(fruta : string){
+    this.indice = this.frutas.indexOf(fruta);
+    this.rota.navigate(['editar-produto/'+this.indice]);
+  }
+
+  public editarFruta(novoNome : string){
+    this.frutas.splice(this.indice,1,novoNome);
   }
 
   constructor(public rota : Router) { }

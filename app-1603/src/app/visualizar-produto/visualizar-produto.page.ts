@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DadosService } from '../services/dados.service';
 
 @Component({
   selector: 'app-visualizar-produto',
@@ -9,8 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 export class VisualizarProdutoPage implements OnInit {
 
   indice:number;
+  f : string;
 
-  constructor(public parametroRota : ActivatedRoute) { }
+  constructor(public parametroRota : ActivatedRoute,
+              public dados : DadosService) { }
 
   ngOnInit() {
 
@@ -21,6 +24,11 @@ export class VisualizarProdutoPage implements OnInit {
     }
     
     )
+
+    this.f = this.dados.nomeFruta(this.indice);
+    
   }
+
+
 
 }
