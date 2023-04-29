@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="listar-aluno" text="Voltar"></ion-back-button>
+    </ion-buttons>    
+        
+    <ion-title>visualizar-aluno</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>
+        Dados do aluno:
+      </ion-card-title>
+
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Nome: {{a.name}}</ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>Sexo: {{a.sexo}}</ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>Telefone: {{a.telefone}}</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Matricula: {{a.matricula}}</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Bilingue: {{a.alunoBilingue}}</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Cursos: {{a.cursosTI}}</ion-label>
+        </ion-item>        
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

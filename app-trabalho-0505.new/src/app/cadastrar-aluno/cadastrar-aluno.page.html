@@ -1,0 +1,100 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="listar-aluno" text="Voltar"></ion-back-button>
+    </ion-buttons>    
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+
+    <ion-label>Nome:</ion-label>
+    <ion-input [(ngModel)]="nome"></ion-input>
+
+  </ion-item>
+
+  <ion-item>
+
+    <ion-label>Telefone:</ion-label>
+    <ion-input [(ngModel)]="telefone" type="number"></ion-input>
+
+  </ion-item>
+
+  <ion-item>
+
+    <ion-label>Matricula:</ion-label>
+    <ion-input [(ngModel)]="matricula"></ion-input>
+
+  </ion-item>  
+
+  <ion-radio-group  [(ngModel)]="sexo">
+
+    <ion-item>
+      <ion-label>Sexo:</ion-label>
+    </ion-item>
+
+      <ion-item>
+        <ion-label>Masculino</ion-label>
+        <ion-radio  slot="start" color="dark" value="Masculino"></ion-radio>
+      </ion-item>
+
+    <ion-item>
+      <ion-label>Feminino</ion-label>
+      <ion-radio slot="start" color="dark" value="Feminino"></ion-radio>
+    </ion-item>    
+
+  </ion-radio-group>  
+
+  <ion-item>
+
+    <ion-label>Aluno bilingue?</ion-label>
+    <ion-toggle [(ngModel)]="bilingue" slot="end" color="secondary"></ion-toggle>
+
+  </ion-item>  
+
+  <ion-item>
+    <ion-label>Cursos de tecnologia:</ion-label>
+  </ion-item>
+
+  <ion-list>   
+
+    <ion-item>
+      <ion-label>PHP</ion-label>
+      <ion-checkbox [(ngModel)]="tec1" color="dark" slot="start"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>C#</ion-label>
+      <ion-checkbox [(ngModel)]="tec2" color="dark" slot="start"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Angular</ion-label>
+      <ion-checkbox [(ngModel)]="tec3" color="dark" slot="start"></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button expand="block" color="success" (click)="cadastrar()">Cadastrar</ion-button>
+
+  <div *ngIf="bilingueResult != null">
+
+    {{nome}} <br>
+    {{sexo}} <br>
+    {{matricula}} <br>
+    {{telefone}} <br>
+    {{bilingueResult}} <br>
+    {{tec1Result}} <br>
+    {{tec2Result}} <br>
+    {{tec3Result}} <br>
+
+
+  </div>  
+
+
+</ion-content>
+

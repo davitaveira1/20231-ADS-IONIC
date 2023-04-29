@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>listar-aluno</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <ion-list *ngFor="let f of dados.getFrutas()">
+    <ion-item-sliding>           
+      
+      <ion-item-options side="start">
+        <ion-item-option color="primary" expandable (click)="dados.visualizarFruta(f)">
+          Visualizar
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item>
+        <ion-label>{{f}}</ion-label>
+      </ion-item> 
+      <ion-item-options side="end">
+        <ion-item-option color="danger" expandable (click)="dados.removeFruta(f)">
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list> -->
+
+  <ion-list *ngFor="let a of dados.getVetorObjetos()">
+    <ion-item-sliding>
+
+      <ion-item-options side="start">
+        <ion-item-option color="primary" expandable>
+          Editar
+        </ion-item-option>
+      </ion-item-options>
+
+      <ion-item class="padding-start padding" detail>
+        <ion-label>{{a.name}}</ion-label>
+      </ion-item> 
+
+      <ion-item-options side="end">
+
+        <ion-item-option color="secondary" expandable (click)="dados.visualizarAluno(a)">
+          Mostrar
+        </ion-item-option>
+
+        <ion-item-option color="danger" expandable>
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>  
+  </ion-list>    
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add" (click)="encaminharCadastrarAluno()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+
+</ion-content>
