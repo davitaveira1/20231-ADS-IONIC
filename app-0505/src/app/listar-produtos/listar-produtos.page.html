@@ -1,6 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>listar-produtos</ion-title>
+    <ion-buttons slot="primary" (click)="logout()">
+      <ion-button >
+        <ion-icon slot="end" name="log-out-outline"> </ion-icon>
+      </ion-button>
+    </ion-buttons>  
   </ion-toolbar>
 </ion-header>
 
@@ -38,3 +43,7 @@
     </ion-fab-button>
   </ion-fab>
 </ion-content>
+
+<ion-footer>
+  Seja bem vindo {{nomeUsuario}}
+</ion-footer>

@@ -10,11 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
+import { AutenticacaoService } from './services/autenticacao.service';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule,FormsModule,ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
-  providers: [NativeStorage,ServicoBdService,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [AutenticacaoService, NativeStorage,ServicoBdService,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicoBdService } from '../services/servico-bd.service';
 import { Router } from '@angular/router';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { AutenticacaoService } from '../services/autenticacao.service';
 
 @Component({
   selector: 'app-listar-produtos',
@@ -15,20 +16,17 @@ export class ListarProdutosPage implements OnInit {
 
   constructor(public servicoBD : ServicoBdService,
               public rota : Router,
-              public storage : NativeStorage) { }
+              public storage : NativeStorage,
+              public userLogado : AutenticacaoService) { }
 
   ngOnInit() {
 
   }
 
   ionViewWillEnter(){
-   this.storage.getItem('nomeUsuario').then((res)=>{
+    console.log("Nome user logado: "+this.userLogado.getUser());
+    this.nomeUsuario=this.userLogado.getUser();
 
-    this.nomeUsuario = res;
-    console.log("Nome usuario: "+this.nomeUsuario);
-
-   });
-   
    this.produtos = [];
    this.listar();
   }
@@ -46,7 +44,7 @@ export class ListarProdutosPage implements OnInit {
         
         for(let dadosProdutos of data['result']){
           this.produtos.push(dadosProdutos);
-          console.log("Valores: "+this.produtos.nome);
+          //console.log("Valores: "+this.produtos.nome);
         }
         
 
@@ -88,4 +86,7 @@ export class ListarProdutosPage implements OnInit {
     this.rota.navigate(['adicionar-produto']);
   }
 
+  logout(){
+    this.rota.navigate(['principal']);
+  }
 }
